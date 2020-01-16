@@ -33,4 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
     goodsWrapper.appendChild(createCardGoods(1,'Дартс',2000, 'img/temp/Archer.jpg'));
     goodsWrapper.appendChild(createCardGoods(2,'Фламинго',3000, 'img/temp/Flamingo.jpg'));
     goodsWrapper.appendChild(createCardGoods(3,'Носки',500, 'img/temp/Socks.jpg'));
+
+    const coseCart = (event) => {
+        const target = event.target;
+
+        if (target === cart || target.classList.contains('cart-close')) {
+            cart.style.display = '';
+        }
+    };
+
+    const openCart = () => {
+        cart.style.display = `flex`;
+    };
+
+    cartBtn.addEventListener('click', openCart);
+    cart.addEventListener('click', closeCart);
+
 });
